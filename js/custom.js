@@ -76,12 +76,11 @@ $(document).ready(function () {
                             $('#row-' + uid).fadeOut(500);
                             setTimeout(function () {
                                 $('#row-' + uid).remove();
+                                if ($('[id^="row-"]').length < 0) {
+                                    loadTableIncoming();
+                                }                                
                             }, 600);
                         })
-                    }
-
-                    if ($('[id^="row-"]'.length < 0)) {
-                        loadTableIncoming();
                     }
                     $('.spinner').remove();
                     $('button#refresh').show();
@@ -109,11 +108,11 @@ $(document).ready(function () {
                                 $('#row-' + id).fadeOut(500);
                                 setTimeout(function () {
                                     $('#row-' + id).remove();
+                                    if ($('[id^="row-"]').length < 0) {
+                                        loadTableIncoming();
+                                    }   
                                 }, 600);
                             })
-                        }
-                        if ($('[id^="row-"]'.length < 0)) {
-                            loadTableOutgoing();
                         }
                     }
                 });
